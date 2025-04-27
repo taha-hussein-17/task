@@ -1,38 +1,132 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f2f3f7;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.dashboard {
+  display: flex;
+  height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.sidebar {
+  width: 220px;
+  background: #2c3e50;
+  color: white;
+  padding: 20px;
+  overflow-y: auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.sidebar h3 {
+  margin-top: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 10px 5px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.sidebar li:hover,
+.sidebar .active {
+  background: #34495e;
+}
+
+.main-area {
+  flex-grow: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-bar button {
+  padding: 8px 16px;
+  background: tomato;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.breadcrumbs {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.breadcrumbs span {
+  margin-right: 8px;
+  cursor: pointer;
+  color: #007bff;
+}
+
+.file-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.file-item {
+  width: 120px;
+  height: 130px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.file-item:hover {
+  transform: scale(1.05);
+}
+
+.file-item .icon {
+  font-size: 40px;
+}
+
+.file-item .name {
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+.create-form {
+  margin: 20px 0;
+  display: flex;
+  gap: 10px;
+}
+
+.create-form input,
+.create-form select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.create-form button {
+  padding: 8px 12px;
+  background-color: #3498db;
   color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.create-form button:hover {
+  opacity: 0.8;
 }
