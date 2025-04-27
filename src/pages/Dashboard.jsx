@@ -78,7 +78,7 @@ export default function Dashboard() {
         onDragOver={(e) => file.isFolder && e.preventDefault()}
         style={{
           display: 'block',
-          
+
           width: '200px',
           margin: '15px',
           textAlign: 'center',
@@ -152,7 +152,7 @@ export default function Dashboard() {
           style={{ cursor: 'pointer', color: '#007BFF' }}
           onClick={() => setCurrentPath("/")}
         >
-          Root
+          
         </span>
         {currentPath !== "/" && (
           <>
