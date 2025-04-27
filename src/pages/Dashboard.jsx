@@ -96,7 +96,9 @@ export default function Dashboard() {
             >
               ➕ Create
             </button>
-            <button onClick={handleLogout}>Logout</button>
+            <button onClick={handleLogout} style={{
+              display:"none"
+            }}>Logout</button>
           </div>
         </div>
 
