@@ -77,20 +77,20 @@ export default function Dashboard() {
         onDrop={(e) => handleDrop(file)}
         onDragOver={(e) => file.isFolder && e.preventDefault()}
         style={{
-          display: 'block', // جعل الفولدرات تظهر كـ Block عند فتحها
+          display: 'block',
+          
           width: '200px',
           margin: '15px',
           textAlign: 'center',
           cursor: 'pointer',
           padding: '20px',
           borderRadius: '8px',
-          backgroundColor: file.isFolder && openFolders[file.id] ? '#e7f1fe' : '#ffffff', // تغيير الخلفية عند فتح الفولدر
+          backgroundColor: file.isFolder && openFolders[file.id] ? '#e7f1fe' : '#ffffff',
           boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
           transition: 'transform 0.2s ease, box-shadow 0.2s ease',
           transform: draggedFile && draggedFile.id === file.id ? 'scale(1.05)' : 'scale(1)',
         }}
-        onClick={() => file.isFolder && toggleFolder(file)} // فتح الفولدر عند النقر عليه
-      >
+        onClick={() => file.isFolder && toggleFolder(file)} >
         <div style={{ marginBottom: '10px' }}>
           {file.isFolder ? (
             <span style={{ fontSize: '48px', color: '#007BFF' }}>📂</span>
@@ -103,7 +103,8 @@ export default function Dashboard() {
         </div>
         {file.isFolder && openFolders[file.id] && (
           <div style={{ marginTop: '10px', paddingLeft: '20px' }}>
-            {renderFiles(file.path + file.name + "/")} {/* عرض الملفات داخل الفولدر المفتوح */}
+            {renderFiles(file.path + file.name + "/")}
+
           </div>
         )}
       </div>
@@ -142,7 +143,10 @@ export default function Dashboard() {
         Logout
       </button>
 
-      {/* Breadcrumbs / المسار الحالي */}
+      {/*
+       Breadcrumbs / المسار الحالي
+بعرض لحضرتك المسارات بتاع الفايلات عاملة ازاي
+       */}
       <div style={{ marginBottom: '20px', fontSize: '16px', color: '#555' }}>
         <span
           style={{ cursor: 'pointer', color: '#007BFF' }}

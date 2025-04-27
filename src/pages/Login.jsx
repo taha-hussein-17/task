@@ -5,7 +5,7 @@ export default function Login() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // لو اصلا مسجل دخول قبل كده يحوله للدashboard
+    // لو اصلا مسجل دخول قبل كده يحوله للداشبورد
     const isAuthenticated = localStorage.getItem("auth");
     if (isAuthenticated) {
       navigate("/dashboard");
